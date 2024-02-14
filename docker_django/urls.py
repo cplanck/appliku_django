@@ -17,7 +17,12 @@ from django.contrib import admin
 from django.http import HttpResponse
 from django.urls import path
 
+
+def resp():
+    return HttpResponse('Hello World!')
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', HttpResponse('Hello world!'))
+    path('', resp())
 ]
+
