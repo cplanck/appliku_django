@@ -23,6 +23,6 @@ def resp():
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', resp())
+    path('', resp)
 ]
 
