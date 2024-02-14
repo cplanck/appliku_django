@@ -84,7 +84,7 @@ DATABASES = {
 }
 
 DATABASES = {
-    'default': env.str('DATABASE_URL')
+    'default': env.db('DATABASE_URL')
 }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
