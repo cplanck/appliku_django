@@ -76,8 +76,14 @@ WSGI_APPLICATION = 'docker_django.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': '/database/db.sqlite3'
     }
+}
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+    },
 }
 
 
@@ -100,6 +106,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 DJANGO_ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = ['/']
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
