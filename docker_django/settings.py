@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import environ
+
+env = environ.Env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,6 +81,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': '/database/db.sqlite3'
     }
+}
+
+DATABASES = {
+    'default': env.str('DATABASE_URL')
 }
 
 # Password validation
