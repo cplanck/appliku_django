@@ -74,29 +74,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'docker_django.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         # 'NAME': BASE_DIR / '/database/db.sqlite3'
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
-#     }
-# }
-
-# print(DATABASES['default']['NAME'])
-
-
 DATABASES = {
     'default': env.db('DATABASE_URL')
 }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 DATABASES['default']['CONN_MAX_AGE'] = 60
-
-# Password validation
-# https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -115,7 +98,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 DJANGO_ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = '/'
+STATIC_ROOT = str(BASE_DIR)
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
