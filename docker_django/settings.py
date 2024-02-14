@@ -83,6 +83,8 @@ DATABASES = {
     }
 }
 
+print(DATABASES)
+
 
 # DATABASES = {
 #     'default': env.db('DATABASE_URL')
