@@ -85,6 +85,8 @@ DATABASES = {
     }
 }
 
+print(DATABASES['default']['NAME'])
+
 
 # DATABASES = {
 #     'default': env.db('DATABASE_URL')
