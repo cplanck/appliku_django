@@ -1,2 +1,2 @@
-web: gunicorn docker_django.wsgi --bind 0.0.0.0:8000
+web: gunicorn docker_django.wsgi --log-file -
 release: python manage.py migrate
